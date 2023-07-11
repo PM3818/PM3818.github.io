@@ -1,0 +1,1124 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="css/font-awesome.css">
+<link rel="shortcut icon"  href="icon/icon.ico"/>
+<title>PonyTurnAround</title>
+	<style>
+		#face{
+			width: 442px;
+			height: 490px;
+			background-color:rgba(251,221,237,1);
+			border-radius: 50%;
+			border:solid rgba(245,166,197,1) 15px;
+			margin-top:80px;
+			position:relative;
+			
+		}
+		#head{
+			display: flex;
+			justify-content: center;
+			height: 650px;
+			align-items: center;
+			position: relative;
+			width: 1406px;
+		}
+		img{
+			position: absolute;
+			z-index: 20;
+			width: 800px;
+			opacity:.0
+		}
+		#righteye{
+			width:160px;
+			height: 275px;
+			background-color:white;
+			position: absolute;
+			z-index: 2;
+			border-radius: 50%;
+			left:54%;
+			top: 238px;
+			transform: rotateZ(5deg) scale(1);
+			overflow: hidden;
+			transition: .5s
+		}
+		#lefteye{
+			width:160px;
+			height: 275px;
+			background-color:white;
+			position:absolute;
+			z-index: 3;
+			border-radius: 50%;
+			right:54%;
+			top: 238px;
+			transform: rotateZ(-5deg) scale(1);
+			overflow: hidden;
+			transition: .5s;
+		}
+		#righteyeshadow,#lefteyeshadow{
+			width:490px;
+			height: 490px;
+			position: absolute;
+		}
+		#righteyeshadow{
+			background-image: url(image/righteyeshadow.PNG);
+			right:-95px;
+			bottom: -40px;
+			z-index: 8;
+			opacity: .07;
+			background-position: right;
+			transition: .5s
+		}
+		#lefteyeshadow{
+			background-image: url(image/lefteyeshadow.PNG);
+			left:-95px;
+			bottom: -40px;
+			z-index: 8;
+			opacity: .07;
+			background-position: left;
+			transition: .5s
+		}
+		#righteyeball{
+			width:150px;
+			height: 245px;
+			background:linear-gradient(rgba(5,54,46,1),rgba(40,165,146,1));
+			z-index: 4;
+			position:absolute;
+			border-radius: 50%;
+			top: 42px;
+			transform: rotateZ(-5deg) scale(1);
+			right: 10px;
+			transition: .5s;
+		}
+		#righteyepupil{
+			width:75%;
+			height:70%;
+			background:black;
+			z-index: 5;
+			position: absolute;
+			border-radius: 50%;
+			top:27%;
+			left: 7%;
+			transform: rotateZ(-5deg) scale(1);
+			transition: .5s
+		}
+		#lefteyeball{
+			width:150px;
+			height: 245px;
+			background:linear-gradient(rgba(5,54,46,1),rgba(40,165,146,1));
+			z-index: 6;
+			position:absolute;
+			border-radius: 50%;
+			top: 42px;
+			transform: rotateZ(5deg) scale(1);
+			right: -0px;
+			transition: .5s
+		}
+		#lefteyepupil{
+			width:75%;
+			height:70%;
+			background:black;
+			z-index: 7;
+			position: absolute;
+			border-radius: 50%;
+			top:27%;
+			right: 7%;
+			transform: rotateZ(5deg) scaleX(1);
+			transition: .5s
+		}
+		#righteyelight1{
+			width:43%;
+			height:45%;
+			background:white;
+			z-index: 8;
+			position: absolute;
+			border-radius: 50%;
+			top:20%;
+			right: 17%;
+			opacity: .85;
+			transform: rotateZ(-25deg) scaleX(1);
+			transition: 1s
+		}
+		#lefteyelight1{
+			width:43%;
+			height:45%;
+			background:white;
+			z-index: 8;
+			position: absolute;
+			border-radius: 50%;
+			top:20%;
+			right:8%;
+			opacity: .85;
+			transform: rotateZ(-25deg) scaleX(1);
+			transition: 1s
+		}
+		#righteyelight2{
+			width:25px;
+			height:25px;
+			background:white;
+			z-index: 8;
+			position: absolute;
+			border-radius: 50%;
+			bottom:30%;
+			right: 50%;
+			opacity: .85;
+			transform: rotateZ(-25deg) scaleX(1);
+			transition: 1s
+		}
+		#lefteyelight2{
+			width:25px;
+			height:25px;
+			background:white;
+			z-index: 8;
+			position: absolute;
+			border-radius: 50%;
+			bottom:30%;
+			right: 45%;
+			opacity: .85;
+			transform: rotateZ(-25deg) scaleX(1);
+			transition: 1s
+		}
+		#rightear img{
+			width:750px;
+			height:750px;
+			position: absolute;
+			z-index: -1;
+			opacity: 1;
+			transition: .5s;
+			transform: rotateZ(0deg) scaleX(1);
+			top: -55px;
+			right:22%;
+		}
+		#leftear img{
+			width:750px;
+			height:750px;
+			position: absolute;
+			top: -55px;
+			left:22%;
+			transform: scale(1) scale(1);
+			z-index: -1;
+			opacity: 1;
+			transition: .5s;
+		}
+		#righteyebrand img{
+			width:795px;
+			height:780px;
+			position: absolute;
+			right:21.5%;
+			opacity: 1;
+			z-index: 20;
+			top:-55px;
+			transition: .5s;
+			transform: scale(1) scale(1);
+		}
+		#lefteyebrand img{
+			width:795px;
+			height:780px;
+			position: absolute;
+			right: 22%;
+			opacity: 1;
+			z-index: 20;
+			top:-55px;
+			transform: scale(1) scaleX(1);
+			transition: .5s
+		}
+		
+		
+		#left{
+			display: inline-block;
+			width: 80px;
+			height: 80px;
+			background-color:rgba(255,162,185,1);
+			top:45%;
+			position: absolute;
+			transition: .5s;
+			border-radius: 50%;
+			left: 10px;
+			z-index: 30;
+			text-align: center;
+			line-height: 75px;
+			color: white;
+			font-size: 50px;
+			font-weight: bold
+		}
+		#left:hover{
+			background-color:rgba(255,126,158,1)
+		}
+		
+		#right{
+			display: inline-block;
+			width: 80px;
+			height: 80px;
+			background-color:rgba(255,162,185,1);
+			top:45%;
+			position: absolute;
+			transition: .5s;
+			border-radius: 50%;
+			right: 10px;
+			text-align: center;
+			line-height: 75px;
+			color: white;
+			font-size: 50px;
+			font-weight: bold
+		}
+		#right:hover{
+			background-color:rgba(255,126,158,1)
+		}
+		#top{
+			display: inline-block;
+			width: 80px;
+			height: 80px;
+			background-color:rgba(255,162,185,1);
+			top:-100px;
+			position: absolute;
+			transition: .5s ;
+			border-radius: 50%;
+			right:47%;
+			z-index: 100;
+			text-align: center;
+			line-height: 75px;
+			color: white;
+			font-size: 50px;
+			font-weight: bold
+			
+		}
+		#top:hover{
+			background-color:rgba(255,126,158,1)
+		}
+		#bottom{
+			display: inline-block;
+			width: 80px;
+			height: 80px;
+			background-color:rgba(255,162,185,1);
+			top:700px;
+			position: absolute;
+			transition: .5s ;
+			border-radius: 50%;
+			right:47%;
+			z-index: 100;
+			text-align: center;
+			line-height: 75px;
+			color: white;
+			font-size: 50px;
+			font-weight: bold
+			
+		}
+		#bottom:hover{
+			background-color:rgba(255,126,158,1)
+		}
+		#bottomleft{
+			display: inline-block;
+			width: 80px;
+			height: 80px;
+			background-color:rgba(255,162,185,1);
+			top:700px;
+			position: absolute;
+			transition: .5s ;
+			border-radius: 50%;
+			left:10px;
+			z-index: 100;
+			text-align: center;
+			line-height: 75px;
+			color: white;
+			font-size: 50px;
+			font-weight: bold;
+			transform: rotateZ(-45deg)
+			
+		}
+		#bottomleft:hover{
+			background-color:rgba(255,126,158,1)
+		}
+		#bottomright{
+			display: inline-block;
+			width: 80px;
+			height: 80px;
+			background-color:rgba(255,162,185,1);
+			top:700px;
+			position: absolute;
+			transition: .5s ;
+			border-radius: 50%;
+			right:10px;
+			z-index: 100;
+			text-align: center;
+			line-height: 75px;
+			color: white;
+			font-size: 50px;
+			font-weight: bold;
+			transform: rotateZ(225deg)
+			
+		}
+		#bottomright:hover{
+			background-color:rgba(255,126,158,1)
+		}
+		#topleft{
+			display: inline-block;
+			width: 80px;
+			height: 80px;
+			background-color:rgba(255,162,185,1);
+			top:-100px;
+			position: absolute;
+			transition: .5s ;
+			border-radius: 50%;
+			left: 10px;
+			z-index: 100;
+			text-align: center;
+			line-height: 75px;
+			color: white;
+			font-size: 50px;
+			font-weight: bold;
+			transform: rotateZ(45deg)
+			
+		}
+		#topleft:hover{
+			background-color:rgba(255,126,158,1)
+		}
+		#topright{
+			display: inline-block;
+			width: 80px;
+			height: 80px;
+			background-color:rgba(255,162,185,1);
+			top:-100px;
+			position: absolute;
+			transition: .5s ;
+			border-radius: 50%;
+			right: 10px;
+			z-index: 100;
+			text-align: center;
+			line-height: 75px;
+			color: white;
+			font-size: 50px;
+			font-weight: bold;
+			transform: rotateZ(135deg)
+			
+		}
+		#topright:hover{
+			background-color:rgba(255,126,158,1)
+		}
+		.box{
+			height: 100px;
+			width:100%;
+			display: inline-block;
+			margin: 0px;
+			padding: 0px;
+			transition: .5s ;
+		}
+		
+		.mouthnose{
+			width: 780px;
+			height: 780px;
+			position: absolute;
+			top: -60px;
+			opacity: 1;
+			z-index: 50;
+			transition: .5s ;
+			transform: rotateZ(0deg) scale(1) translateX(0px) translateY(0px);
+			transition: .5s ;
+		}
+		.mouth img{
+			opacity: 1;
+			width: 100%;
+			transition: .5s ;
+			transform: rotateZ(0deg) scale(1) translateX(0px) translateY(0px);
+			transition: .5s ;
+		}
+		.nose img{
+			opacity: 1;
+			width: 100%;
+			transition: .5s ;
+			transform: rotateZ(0deg) scale(1) translateX(0px) translateY(0px);
+			transition: .5s ;
+		}
+		.nose2 img{
+			opacity: 1;
+			width: 100%;
+			transform: rotateZ(0deg) scale(1) translateX(0px) translateY(0px);
+			transition: .5s ;
+		}
+		#left:hover ~ #lefteye>#lefteyeball{
+			top: 20px;
+			transform: rotateZ(5deg) scaleX(1.1);
+			right: 20px;
+		}
+		#left:hover ~ #lefteye{
+			right:56%;
+			top: 238px;
+			transform: rotateZ(10deg);
+			transform: scaleX(.68)
+		}
+		#left:hover ~ #lefteyebrand>img{
+			right: 26.9%;
+			top:-45px;
+			transform: scaleX(.68)  rotateZ(5deg) scaleY(1.03);
+		}
+		
+		
+		#left:hover ~ #lefteye>#lefteyepupil{
+			top:15%;
+			right: 25%;
+			transform: rotateZ(5deg) scaleX(1.1);
+		}
+		#left:hover ~ #lefteye>#lefteyelight1{
+			top:10%;
+			right:17%;
+			transform: rotateZ(-25deg) scaleX(.95);
+		}
+		
+		#left:hover ~ #lefteye>#lefteyelight2{
+			bottom:40%;
+			right: 55%;
+			transform: rotateZ(-25deg) scaleX(.95);
+		}
+		
+		#left:hover ~ #leftear>img{
+			top: -55px;
+			left:22%;
+			transform: scale(1) scaleX(.9);
+		}
+		
+		#left:hover ~ #righteye{
+			left:52%;
+			top: 260px;
+			transform: rotateZ(10deg) scaleX(1.05);
+		}
+		#left:hover ~ #righteyebrand>img{
+			right:24.5%;
+			z-index: 20;
+			top:-48px;
+			transform: rotateZ(3deg) scaleX(1.1)scaleY(1.035);
+		}
+		#left:hover ~ #righteye>#righteyeball{
+			top: 30px;
+			transform: rotateZ(-5deg) scale(1);
+			right: 30px;
+		}
+		#left:hover ~ #righteye>#righteyepupil{
+			top:20%;
+			left: -5%;
+			transform: rotateZ(-5deg) scale(1);
+		}
+		#left:hover ~ #righteye>#righteyelight1{
+			top:12%;
+			right: 32%;
+			transform: rotateZ(-25deg) scaleX(1);
+		}
+		#left:hover ~ #righteye>#righteyelight2{
+			bottom:35%;
+			right: 60%;
+			transform: rotateZ(-25deg) scaleX(1);
+		}
+		#left:hover ~ #rightear>img{
+			transform: rotateZ(0deg) scaleX(1.1);
+			top: -45px;
+			right:23%;
+		}
+		#left:hover ~ .mouthnose{
+			transform: rotateZ(-5deg) scaleX(.9) translateX(-85px) translateY(-10px);
+		}
+		#left:hover ~ .mouthnose>.nose>img{
+			transform: rotateZ(0deg) scale(1) translateX(-10px) translateY(0px);
+		}
+		#left:hover ~ .mouthnose>.nose2>img{
+			transform: rotateZ(0deg) scale(1) translateX(-10px) translateY(0px);
+		}
+		
+		#left:hover ~ .mouthnose>.mouth>img{
+			transform: rotateZ(0deg) scale(1) translateX(5px) translateY(5px);
+		}
+		
+		
+		#right:hover ~ #righteye>#righteyeball{
+			top: 20px;
+			transform: rotateZ(5deg) scaleX(1.1);
+			right: 0px;
+		}
+		#right:hover ~ #righteye{
+			left:56%;
+			top: 238px;
+			transform: rotateZ(-10deg);
+			transform: scaleX(.68)
+		}
+		#right:hover ~ #righteyebrand>img{
+			right: 16.8%;
+			top:-46px;
+			transform: scaleX(.69)  rotateZ(-5deg) scaleY(1.03);
+		}
+		#right:hover ~ #righteye>#righteyepupil{
+			top:20%;
+			left: 25%;
+			transform: rotateZ(-5deg) scaleX(1.1);
+		}
+		#right:hover ~ #righteye>#righteyelight1{
+			top:12%;
+			right:0%;
+			transform: rotateZ(-25deg) scaleX(.95);
+		}
+		
+		#right:hover ~ #righteye>#righteyelight2{
+			bottom:35%;
+			right: 35%;
+			transform: rotateZ(-25deg) scaleX(.95);
+		}
+		
+		#right:hover ~ #rightear>img{
+			top: -55px;
+			right:22%;
+			transform: scale(1) scaleX(.9);
+		}
+		#right:hover ~ #lefteye{
+			right:52%;
+			top: 260px;
+			transform: rotateZ(-10deg) scaleX(1.05);
+		}
+		#right:hover ~ #lefteyebrand>img{
+			right:19.2%;
+			z-index: 20;
+			top:-48px;
+			transform: rotateZ(-3deg) scaleX(1.1)scaleY(1.035);
+		}
+		#right:hover ~ #lefteye>#lefteyeball{
+			top: 25px;
+			transform: rotateZ(5deg) scale(1);
+			right: -15px;
+		}
+		#right:hover ~ #lefteye>#lefteyepupil{
+			top:20%;
+			right: -7%;
+			transform: rotateZ(5deg) scale(1);
+		}
+		#right:hover ~ #lefteye>#lefteyelight1{
+			top:12%;
+			right: 2%;
+			transform: rotateZ(-25deg) scaleX(1);
+		}
+		#right:hover ~ #lefteye>#lefteyelight2{
+			bottom:35%;
+			right: 40%;
+			transform: rotateZ(-25deg) scaleX(1);
+		}
+		#right:hover ~ #leftear>img{
+			transform: rotateZ(0deg) scaleX(1.1);
+			top: -45px;
+			left: 22.6%
+		}
+		#right:hover ~ .mouthnose{
+			transform: rotateZ(5deg) scaleX(.9) translateX(80px) translateY(-10px);
+		}
+		#right:hover ~ .mouthnose>.nose>img{
+			transform: rotateZ(0deg) scale(1) translateX(10px) translateY(0px);
+		}
+		#right:hover ~ .mouthnose>.nose2>img{
+			transform: rotateZ(0deg) scale(1) translateX(10px) translateY(0px);
+		}
+		#right:hover ~ .mouthnose>.mouth>img{
+			transform: rotateZ(0deg) scale(1) translateX(-5px) translateY(5px);
+		}
+		
+		
+		#top:hover ~ #righteye{
+			left:54%;
+			top: 158px;
+			transform: rotateZ(5deg) scaleY(.8)scaleX(.95);
+		}
+		
+		#top:hover ~ #lefteye{
+			right:53.5%;
+			top: 158px;
+			transform: rotateZ(-15deg) scaleY(.8)scaleX(.95);
+		}
+		#top:hover ~ #righteyebrand>img{
+			right:21.5%;
+			z-index: 20;
+			top:-117px;
+			transform: rotateZ(-5deg) scaleX(.98)scaleY(.8);
+		}
+		#top:hover ~ #lefteyebrand>img{
+			right: 21.8%;
+			top:-140px;
+			transform: rotateZ(-5deg) scaleX(.98)scaleY(.8);
+		}
+		#top:hover ~ #rightear>img{
+			top: -35px;
+			right:22.3%;
+			transform:rotateZ(0deg) scaleY(.9);
+		}
+		#top:hover ~ #leftear>img{
+			transform:rotateZ(0deg) scaleY(.9);
+			top: -35px;
+			left: 22.3%
+		}
+		#top:hover ~ #lefteye>#lefteyeball{
+			top: -15px;
+			transform: rotateZ(5deg) scaleX(1.1);
+			right: -10px;
+		}
+		#top:hover ~ #righteye>#righteyeball{
+			top: -15px;
+			transform: rotateZ(-5deg) scaleX(1.1);
+			right: 18px;
+		}
+		#top:hover ~ #righteye>#righteyepupil{
+			top:0px;
+			left: 4%;
+			transform: rotateZ(5deg) scaleX(1.1);
+		}
+		#top:hover ~ #lefteye>#lefteyepupil{
+			top:0px;
+			right: -2%;
+			transform: rotateZ(5deg) scale(1);
+		}
+		#top:hover ~ #lefteye>#lefteyelight1{
+			top:0%;
+			right: 2%;
+			transform: rotateZ(-25deg) scaleX(1);
+		}
+		#top:hover ~ #lefteye>#lefteyelight2{
+			bottom:55%;
+			right: 40%;
+			transform: rotateZ(-25deg) scaleX(1);
+		}
+		#top:hover ~ #righteye>#righteyelight1{
+			top:-5%;
+			right:20%;
+			transform: rotateZ(-30deg) scaleX(1);
+		}
+		
+		#top:hover ~ #righteye>#righteyelight2{
+			bottom:55%;
+			right: 55%;
+			transform: rotateZ(-25deg) scaleX(1);
+		}
+		#top:hover ~ .mouthnose{
+			transform: rotateZ(0deg) scale(1) translateX(0px) translateY(-120px);
+		}
+		#top:hover ~ .mouthnose>.nose>img{
+			transform: rotateZ(0deg) scale(1) translateX(0px) translateY(-10px);
+		}
+		
+		
+		
+		#bottom:hover ~ #righteye{
+			left:53.5%;
+			top: 285px;
+			transform: rotateZ(10deg) scaleY(.9)scaleX(.95);
+		}
+		
+		#bottom:hover ~ #lefteye{
+			right:53.5%;
+			top: 285px;
+			transform: rotateZ(-10deg) scaleY(.9)scaleX(.95);
+		}
+		#bottom:hover ~ #righteyebrand>img{
+			right:21.5%;
+			z-index: 20;
+			top:-20px;
+			transform: rotateZ(5deg) scaleX(.98)scaleY(.92);
+		}
+		#bottom:hover ~ #lefteyebrand>img{
+			right: 22%;
+			top:-20px;
+			transform: rotateZ(-5deg) scaleX(.98)scaleY(.92);
+		}
+		#bottom:hover ~ .mouthnose{
+			transform: rotateZ(0deg) scale(1) translateX(0px) translateY(50px);
+		}
+		#bottom:hover ~ .mouthnose>.nose>img{
+			transform: rotateZ(0deg) scale(1) translateX(0px) translateY(-5px);
+		}
+		#bottom:hover ~ .mouthnose>.mouth>img{
+			transform: rotateZ(0deg) scaleY(.9) translateX(0px) translateY(5px);
+		}
+		#bottom:hover ~ #rightear>img{
+			top: -50px;
+			right:22.3%;
+			transform:rotateZ(0deg) scale(1.05);
+		}
+		#bottom:hover ~ #leftear>img{
+			transform:rotateZ(0deg) scale(1.05);
+			top: -50px;
+			left: 22.3%
+		}
+		#bottom:hover ~ #lefteye>#lefteyeball{
+			top: 80px;
+			transform: rotateZ(5deg) scaleX(1.1);
+			right: 5px;
+		}
+		#bottom:hover ~ #righteye>#righteyeball{
+			top: 80px;
+			transform: rotateZ(-5deg) scaleX(1.1);
+			right: 13px;
+		}
+		#bottom:hover ~ #righteye>#righteyepupil{
+			top:120px;
+			left: 6%;
+			transform: rotateZ(-5deg) scaleX(1);
+		}
+		#bottom:hover ~ #lefteye>#lefteyepupil{
+			top:120px;
+			right: 6%;
+			transform: rotateZ(5deg) scale(1);
+		}
+		#bottom:hover ~ #lefteye>#lefteyelight1{
+			top:33%;
+			right: 6%;
+			transform: rotateZ(-25deg) scale(.95);
+		}
+		#bottom:hover ~ #lefteye>#lefteyelight2{
+			bottom:15%;
+			right: 40%;
+			transform: rotateZ(-25deg) scale(.95);
+		}
+		#bottom:hover ~ #righteye>#righteyelight1{
+			top:32%;
+			right:20%;
+			transform: rotateZ(-30deg) scale(.95);
+		}
+		
+		#bottom:hover ~ #righteye>#righteyelight2{
+			bottom:15%;
+			right: 55%;
+			transform: rotateZ(-25deg) scale(.95);
+		}
+		
+		
+		
+		#topleft:hover ~ #lefteye{
+			right:55%;
+			top:198px;
+			transform: rotateZ(5deg) scaleX(.74) scaleY(.95);
+		}
+		#topleft:hover ~ #righteye{
+			left:52%;
+			top: 208px;
+			transform: rotateZ(20deg) scaleX(1.05);
+		}
+		#topleft:hover ~ .mouthnose{
+			transform: rotateZ(0deg) scaleX(.95) scaleY(1) translateX(-60px) translateY(-30px);
+		}
+		#topleft:hover ~ .mouthnose>.nose>img{
+			transform: rotateZ(0deg) scaleX(1) scaleY(1) translateX(-10px) translateY(-10px);
+		}
+		#topleft:hover ~ .mouthnose>.mouth>img{
+			transform: rotateZ(-15deg) scaleX(.9) scaleY(.8) translateX(-40px) translateY(45px);
+		}
+		#topleft:hover ~ #lefteyebrand>img{
+			right:25.1%;
+			z-index: 20;
+			top:-61px;
+			transform:scaleX(.74)  rotateZ(13deg) scaleY(.95);
+		}
+		#topleft:hover ~ #righteyebrand>img{
+			right:24%;
+			z-index: 20;
+			top:-110px;
+			transform: rotateZ(10deg) scaleX(1.1)scaleY(.995);
+		}
+		#topleft:hover ~ #righteye>#righteyeball{
+			top: 30px;
+			transform: rotateZ(-5deg) scale(1);
+			right: 30px;
+		}
+		#topleft:hover ~ #righteye>#righteyepupil{
+			top:20%;
+			left: -5%;
+			transform: rotateZ(-5deg) scale(1);
+		}
+		#topleft:hover ~ #righteye>#righteyelight1{
+			top:12%;
+			right: 32%;
+			transform: rotateZ(-25deg) scaleX(1);
+		}
+		#topleft:hover ~ #righteye>#righteyelight2{
+			bottom:35%;
+			right: 60%;
+			transform: rotateZ(-25deg) scaleX(1);
+		}
+		#topleft:hover ~ #lefteye>#lefteyepupil{
+			top:15%;
+			right: 25%;
+			transform: rotateZ(5deg) scaleX(1.1);
+		}
+		#topleft:hover ~ #lefteye>#lefteyelight1{
+			top:10%;
+			right:17%;
+			transform: rotateZ(-25deg) scaleX(.95);
+		}
+		
+		#topleft:hover ~ #lefteye>#lefteyelight2{
+			bottom:40%;
+			right: 55%;
+			transform: rotateZ(-25deg) scaleX(.95);
+		}
+		#topleft:hover ~ #lefteye>#lefteyeball{
+			top: 20px;
+			transform: rotateZ(5deg) scaleX(1.1);
+			right: 20px;
+		}
+		#topleft:hover ~ #leftear>img{
+			top: -35px;
+			left:22%;
+			transform: scale(1) scaleX(.9) rotateZ(5deg);
+		}
+		#topleft:hover ~ #rightear>img{
+			transform: rotateZ(5deg) scaleX(1.1);
+			top: -45px;
+			right:24%;
+		}
+		
+		
+		
+		
+		#topright:hover ~ #righteye{
+			left:55%;
+			top:198px;
+			transform: rotateZ(-5deg) scaleX(.74) scaleY(.95);
+		}
+		#topright:hover ~ #lefteye{
+			right:52%;
+			top: 208px;
+			transform: rotateZ(-20deg) scaleX(1.05);
+		}
+		#topright:hover ~ .mouthnose{
+			transform: rotateZ(0deg) scaleX(.95) scaleY(1) translateX(60px) translateY(-30px);
+		}
+		#topright:hover ~ .mouthnose>.nose>img{
+			transform: rotateZ(0deg) scaleX(1) scaleY(1) translateX(10px) translateY(-10px);
+		}
+		#topright:hover ~ .mouthnose>.mouth>img{
+			transform: rotateZ(15deg) scaleX(.9) scaleY(.8) translateX(40px) translateY(45px);
+		}
+		#topright:hover ~ #righteyebrand>img{
+			right:18.3%;
+			z-index: 20;
+			top:-61px;
+			transform:scaleX(.74)  rotateZ(-13deg) scaleY(.95);
+		}
+		#topright:hover ~ #lefteyebrand>img{
+			right:19.5%;
+			z-index: 20;
+			top:-110px;
+			transform: rotateZ(-10deg) scaleX(1.1)scaleY(.995);
+		}
+		#topright:hover ~ #righteye>#righteyeball{
+			top: 20px;
+			transform: rotateZ(5deg) scaleX(1.1);
+			right: 0px;
+		}
+		#topright:hover ~ #righteye>#righteyepupil{
+			top:16%;
+			left: 25%;
+			transform: rotateZ(0deg) scaleX(1.1);
+		}
+		#topright:hover ~ #righteye>#righteyelight1{
+			top:12%;
+			right:0%;
+			transform: rotateZ(-25deg) scaleX(.95);
+		}
+		
+		#topright:hover ~ #righteye>#righteyelight2{
+			bottom:35%;
+			right: 35%;
+			transform: rotateZ(-25deg) scaleX(.95);
+		}
+		#topright:hover ~ #lefteye>#lefteyeball{
+			top: 25px;
+			transform: rotateZ(5deg) scale(1);
+			right: -15px;
+		}
+		#topright:hover ~ #lefteye>#lefteyepupil{
+			top:20%;
+			right: -7%;
+			transform: rotateZ(5deg) scale(1);
+		}
+		#topright:hover ~ #lefteye>#lefteyelight1{
+			top:12%;
+			right: 2%;
+			transform: rotateZ(-25deg) scaleX(1);
+		}
+		#topright:hover ~ #lefteye>#lefteyelight2{
+			bottom:35%;
+			right: 40%;
+			transform: rotateZ(-25deg) scaleX(1);
+		}
+		#topright:hover ~ #rightear>img{
+			top: -35px;
+			right:22%;
+			transform: scale(1) scaleX(.9) rotateZ(-5deg);
+		}
+		#topright:hover ~ #leftear>img{
+			transform: rotateZ(-5deg) scaleX(1.1);
+			top: -45px;
+			left:24%;
+		}
+		
+		
+		
+		
+		
+		#bottomleft:hover ~ #lefteye{
+			right:56%;
+			top: 248px;
+			transform: rotateZ(-5deg) scaleX(.68);
+		}
+		#bottomleft:hover ~ #righteye{
+			left:52%;
+			top: 270px;
+			transform: rotateZ(10deg) scaleX(1.05);
+		}
+		#bottomleft:hover ~ .mouthnose{
+			transform: rotateZ(-5deg) scaleX(.9) translateX(-85px) translateY(0px);
+		}
+		#bottomleft:hover ~ .mouthnose>.nose>img{
+			transform: rotateZ(0deg) scale(1) translateX(-10px) translateY(15px);
+		}
+		#bottomleft:hover ~ .mouthnose>.nose2>img{
+			transform: rotateZ(0deg) scale(1) translateX(-10px) translateY(20px);
+		}
+		
+		#bottomleft:hover ~ .mouthnose>.mouth>img{
+			transform: rotateZ(0deg) scale(1) translateX(5px) translateY(15px);
+		}
+		#bottomleft:hover ~ #lefteyebrand>img{
+			right: 26.8%;
+			top:-45px;
+			transform: scaleX(.68)  rotateZ(0deg) scaleY(1.0);
+		}
+		#bottomleft:hover ~ #righteyebrand>img{
+			right:24.5%;
+			z-index: 20;
+			top:-32px;
+			transform: rotateZ(3deg) scaleX(1.1)scaleY(1.0);
+		}
+		#bottomleft:hover ~ #leftear>img{
+			top: -55px;
+			left:22%;
+			transform: scaleY(1.03) scaleX(.9);
+		}
+		#bottomleft:hover ~ #rightear>img{
+			transform: rotateZ(0deg) scaleX(1.1) scaleY(1.03);
+			top: -45px;
+			right:23%;
+		}
+		
+		
+		
+		
+		
+		
+		#bottomright:hover ~ .mouthnose{
+			transform: rotateZ(5deg) scaleX(.9) translateX(80px) translateY(5px);
+		}
+		#bottomright:hover ~ .mouthnose>.nose>img{
+			transform: rotateZ(0deg) scale(1) translateX(10px) translateY(15px);
+		}
+		#bottomright:hover ~ .mouthnose>.nose2>img{
+			transform: rotateZ(0deg) scale(1) translateX(10px) translateY(20px);
+		}
+		#bottomright:hover ~ .mouthnose>.mouth>img{
+			transform: rotateZ(0deg) scale(1) translateX(-5px) translateY(10px);
+		}
+		#bottomright:hover ~ #righteye{
+			left:56%;
+			top: 248px;
+			transform: rotateZ(5deg) scaleX(.68);
+		}
+		#bottomright:hover ~ #lefteye{
+			right:52%;
+			top: 270px;
+			transform: rotateZ(-10deg) scaleX(1.05);
+		}
+		#bottomright:hover ~ #lefteyebrand>img{
+			right:19.2%;
+			z-index: 20;
+			top:-38px;
+			transform: rotateZ(-3deg) scaleX(1.09)scaleY(1.035);
+		}
+		#bottomright:hover ~ #righteyebrand>img{
+			right: 16.8%;
+			top:-46px;
+			transform: scaleX(.67)  rotateZ(0deg) scaleY(1.015);
+		}
+		#bottomright:hover ~ #leftear>img{
+			transform: rotateZ(0deg) scaleX(1.1) scaleY(1.03);
+			top: -45px;
+			left: 22.6%
+		}
+		#bottomright:hover ~ #rightear>img{
+			top: -55px;
+			right:22%;
+			transform: scaleY(1.03) scaleX(.9);
+		}
+	</style>
+</head>
+
+	
+	
+	
+<body>
+	<div class="box"></div>
+		<div id="head">
+		
+		<img src="image/caogao4.PNG" alt="">
+		
+		<div id="left"><i class="fa fa-arrow-left"></i></div>
+		<div id="right"><i class="fa fa-arrow-right"></i></div>
+		<div id="top"><i class="fa fa-arrow-up"></i></div>
+		<div id="bottom"><i class="fa fa-arrow-down"></i></div>
+		<div id="bottomleft"><i class="fa fa-arrow-left"></i></div>
+		<div id="bottomright"><i class="fa fa-arrow-left"></i></div>
+		<div id="topleft"><i class="fa fa-arrow-left"></i></div>
+		<div id="topright"><i class="fa fa-arrow-left"></i></div>
+			
+		<div class="mouthnose">
+			<div class="mouth"><img src="image/mouth.PNG" alt=""></div>
+			<div class="nose"><img src="image/nose1.PNG" alt=""></div>
+			<div class="nose2"><img src="image/nose2.PNG" alt=""></div>
+		</div>
+		
+		<div id="rightear">
+			<img src="image/rightear.PNG" alt="">
+		</div>
+		
+		<div id="leftear">
+			<img src="image/leftear.PNG" alt="">
+		</div>
+			
+		<div id="righteyebrand">
+				<img src="image/righteyebrand.PNG" alt="">
+		</div>
+			
+		<div id="lefteyebrand">
+				<img src="image/lefteyebrand.PNG" alt="">
+		</div>
+			
+		<div id="righteye">
+			<div id="righteyelight2"></div>
+			<div id="righteyelight1"></div>
+			<div id="righteyeshadow"></div>
+			<div id="righteyepupil"></div>
+			<div id="righteyeball"></div>
+		</div>
+			
+			
+		<div id="lefteye">
+			<div id="lefteyelight2"></div>
+			<div id="lefteyelight1"></div>
+			<div id="lefteyeshadow"></div>
+			<div id="lefteyepupil"></div>
+			<div id="lefteyeball"></div>
+		</div>
+		
+		<div id="face">
+		</div>
+			
+		
+	
+			
+	</div>
+	
+	
+	
+	
+	
+</body>
+</html>
