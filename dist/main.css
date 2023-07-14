@@ -2660,7 +2660,7 @@ pre .css~* .id,pre .id {
 }
 
 @media (max-width: 768px) {
-    html {
+    html { 
         font-size:60%
     }
 }
