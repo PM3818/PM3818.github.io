@@ -1,0 +1,109 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+	<style>
+	*{
+		margin: 0px;
+		padding: 0px;
+		}
+		body,html{
+			width: 100%;
+			height: 100%;
+			
+		}
+		.box{
+			background-color: #bc154e;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			width: 100%;
+			height: 100%;
+			transition: all 1s
+		}
+		.switch{
+			display: inline-block;
+			width: 545px;
+			height: 215px;
+			background:white;
+			border-radius:107px;
+			margin: auto;
+			box-shadow: 5px 5px 10px 0px rgba(0,0,0,.3) ;
+			transition: 1s;
+			display: flex;
+			align-items: center;
+			position: relative;
+			overflow: hidden;
+			
+		}
+		.circle{
+			width: 180px;
+			height: 180px;
+			border-radius: 50%;
+			position: absolute;
+			left: 25px;
+			transition: 1s;
+			z-index: 3;
+			
+		}
+	
+			.box:has(.switch:hover){
+			background-color:#1d80b5;
+		}
+		.switch:hover .circle{
+			left: 345px;
+			
+		}
+		.switch:hover .mask{
+			opacity: 0
+		}
+		.ball{
+			background: url(image/ball.png);
+			width: 100%;
+			height: 100%;
+			background-size: cover;
+			transition: transform 1s ,background .2s;
+			transform: rotate(0deg)
+		}
+		.switch:hover .ball{
+			background: url(image/star.png);
+			background-position: center;
+			background-size: cover;
+			transform: rotate(360deg)
+		}
+		.water img{
+			width: 101%;
+		}
+		.water{
+			position: absolute;
+			z-index: 1;
+			left: -100px
+		}
+		.mask{
+		width: 100%;
+			height: 100%;
+			z-index: 2;
+			position: absolute;
+			transition: .5s;
+			opacity: 1;
+			display: inline-block;
+			background: white
+		}
+	</style>
+</head>
+
+<body>
+	<div class="box">
+		<div class="switch">
+			<div class="circle">
+				<div class="ball"></div>
+			</div>
+			<div class="mask"></div>
+			<div class="water">
+				<img src="image/water.gif" alt="">
+			</div>
+		</div>
+	</div>
+</body>
+</html>

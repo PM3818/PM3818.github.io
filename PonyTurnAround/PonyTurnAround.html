@@ -3,16 +3,71 @@
 <head>
 <meta charset="utf-8">
 <link rel="stylesheet" href="css/font-awesome.css">
-<link rel="shortcut icon"  href="icon/icon.ico"/>
-<title>PonyTurnAround</title>
+<link rel="stylesheet" href="../css/custom.styl">
+<link rel="stylesheet" href="../css/clipboard.styl">
+<link rel="stylesheet" href="../css/fonts/remixicon.css">
+      <title>PonySpin</title>
+<meta name="generator" content="hexo-theme-ayer">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+      
+       
+<link rel="stylesheet" href="../dist/main.css">
+
+
+
+ 
+      <script type="text/javascript" charset="UTF-8" async="" src="https://sdk.51.la/js-sdk-pro.min.js" id="LA_COLLECT"></script>
+	<script src="https://cdn.staticfile.org/pace/1.2.4/pace.min.js"></script>
+       
+ 
+
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-bulma@5.0.1/bulma.min.css">
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.min.js"></script>
+
+      <!-- mermaid -->
+      
+      <style>
+        .swal2-styled.swal2-confirm {
+          font-size: 1.6rem;
+        }
+      </style>
+    <link rel="alternate" href="../atom.xml" title="岛" type="application/atom+xml">
+<style type="text/css">
+		[mt_node=trans_loading]::after{
+		content: '';
+		vertical-align: middle !important;
+		width: 1em !important;
+		height: 1em !important;
+		display: inline-block !important;
+		margin: 0 4px !important;
+		border: 2px rgba(0, 0, 0, 0.25) solid !important;
+		border-top: 2px rgba(0, 0, 0, 1) solid !important;
+		border-radius: 50% !important;
+		padding: 0 !important;
+		-webkit-animation: immersive-translate-loading-animation 0.6s infinite linear !important;
+		animation: immersive-translate-loading-animation 0.6s infinite linear !important;
+		}
+
+		@keyframes immersive-translate-loading-animation {
+			from {
+				transform: rotate(0deg,0deg,0deg);
+			}
+			to {
+				transform: rotate(359deg,0deg,0deg);
+			}
+		}
+	</style><style type="text/css">[mt_node^=trans]{display: none !important;}</style>
+	
+    <title>PonyTurnAround</title>
+	
 	<style>
-		#face{
-			width: 442px;
-			height: 490px;
+		#face2{
+			width: 472px;
+			height: 520px;
 			background-color:rgba(251,221,237,1);
 			border-radius: 50%;
 			border:solid rgba(245,166,197,1) 15px;
-			margin-top:80px;
+			margin-top:70px;
 			position:relative;
 			
 		}
@@ -26,9 +81,7 @@
 		}
 		img{
 			position: absolute;
-			z-index: 20;
 			width: 800px;
-			opacity:.0
 		}
 		#righteye{
 			width:160px;
@@ -41,7 +94,7 @@
 			top: 238px;
 			transform: rotateZ(5deg) scale(1);
 			overflow: hidden;
-			transition: .5s
+			transition: .3s;
 		}
 		#lefteye{
 			width:160px;
@@ -54,7 +107,7 @@
 			top: 238px;
 			transform: rotateZ(-5deg) scale(1);
 			overflow: hidden;
-			transition: .5s;
+			transition: .3s;
 		}
 		#righteyeshadow,#lefteyeshadow{
 			width:490px;
@@ -68,7 +121,7 @@
 			z-index: 8;
 			opacity: .07;
 			background-position: right;
-			transition: .5s
+			transition: .3s
 		}
 		#lefteyeshadow{
 			background-image: url(image/lefteyeshadow.PNG);
@@ -77,7 +130,7 @@
 			z-index: 8;
 			opacity: .07;
 			background-position: left;
-			transition: .5s
+			transition: .3s
 		}
 		#righteyeball{
 			width:150px;
@@ -89,7 +142,7 @@
 			top: 42px;
 			transform: rotateZ(-5deg) scale(1);
 			right: 10px;
-			transition: .5s;
+			transition: .3s;
 		}
 		#righteyepupil{
 			width:75%;
@@ -101,7 +154,7 @@
 			top:27%;
 			left: 7%;
 			transform: rotateZ(-5deg) scale(1);
-			transition: .5s
+			transition: .3s
 		}
 		#lefteyeball{
 			width:150px;
@@ -113,7 +166,7 @@
 			top: 42px;
 			transform: rotateZ(5deg) scale(1);
 			right: -0px;
-			transition: .5s
+			transition: .3s
 		}
 		#lefteyepupil{
 			width:75%;
@@ -125,7 +178,7 @@
 			top:27%;
 			right: 7%;
 			transform: rotateZ(5deg) scaleX(1);
-			transition: .5s
+			transition: .3s
 		}
 		#righteyelight1{
 			width:43%;
@@ -209,7 +262,7 @@
 			opacity: 1;
 			z-index: 20;
 			top:-55px;
-			transition: .5s;
+			transition: .3s;
 			transform: scale(1) scale(1);
 		}
 		#lefteyebrand img{
@@ -221,7 +274,7 @@
 			z-index: 20;
 			top:-55px;
 			transform: scale(1) scaleX(1);
-			transition: .5s
+			transition: .3s;
 		}
 		
 		
@@ -232,9 +285,9 @@
 			background-color:rgba(255,162,185,1);
 			top:45%;
 			position: absolute;
-			transition: .5s;
+			transition: 1s;
 			border-radius: 50%;
-			left: 10px;
+			left:10%;
 			z-index: 30;
 			text-align: center;
 			line-height: 75px;
@@ -253,9 +306,9 @@
 			background-color:rgba(255,162,185,1);
 			top:45%;
 			position: absolute;
-			transition: .5s;
+			transition: 1s;
 			border-radius: 50%;
-			right: 10px;
+			right: 10%;
 			text-align: center;
 			line-height: 75px;
 			color: white;
@@ -270,9 +323,9 @@
 			width: 80px;
 			height: 80px;
 			background-color:rgba(255,162,185,1);
-			top:-225px;
+			top:-100px;
 			position: absolute;
-			transition: .5s ;
+			transition: 1s ;
 			border-radius: 50%;
 			right:47%;
 			z-index: 100;
@@ -291,9 +344,9 @@
 			width: 80px;
 			height: 80px;
 			background-color:rgba(255,162,185,1);
-			top:850px;
+			top:700px;
 			position: absolute;
-			transition: .5s ;
+			transition: 1s ;
 			border-radius: 50%;
 			right:47%;
 			z-index: 100;
@@ -312,11 +365,11 @@
 			width: 80px;
 			height: 80px;
 			background-color:rgba(255,162,185,1);
-			top:850px;
+			top:700px;
 			position: absolute;
-			transition: .5s ;
+			transition: 1s ;
 			border-radius: 50%;
-			left:10px;
+			left:10%;
 			z-index: 100;
 			text-align: center;
 			line-height: 75px;
@@ -334,11 +387,11 @@
 			width: 80px;
 			height: 80px;
 			background-color:rgba(255,162,185,1);
-			top:850px;
+			top:700px;
 			position: absolute;
-			transition: .5s ;
+			transition: 1s ;
 			border-radius: 50%;
-			right:10px;
+			right:10%;
 			z-index: 100;
 			text-align: center;
 			line-height: 75px;
@@ -356,11 +409,11 @@
 			width: 80px;
 			height: 80px;
 			background-color:rgba(255,162,185,1);
-			top:-225px;
+			top:-100px;
 			position: absolute;
-			transition: .5s ;
+			transition: 1s ;
 			border-radius: 50%;
-			left: 10px;
+			left: 10%;
 			z-index: 100;
 			text-align: center;
 			line-height: 75px;
@@ -378,11 +431,11 @@
 			width: 80px;
 			height: 80px;
 			background-color:rgba(255,162,185,1);
-			top:-225px;
+			top:-100px;
 			position: absolute;
-			transition: .5s ;
+			transition: 1s ;
 			border-radius: 50%;
-			right: 10px;
+			right: 10%;
 			z-index: 100;
 			text-align: center;
 			line-height: 75px;
@@ -396,12 +449,12 @@
 			background-color:rgba(255,126,158,1)
 		}
 		.box{
-			height: 250px;
+			height: 100px;
 			width:100%;
 			display: inline-block;
 			margin: 0px;
 			padding: 0px;
-			transition: .5s ;
+			transition: .4s ;
 		}
 		
 		.mouthnose{
@@ -413,27 +466,27 @@
 			z-index: 50;
 			transition: .5s ;
 			transform: rotateZ(0deg) scale(1) translateX(0px) translateY(0px);
-			transition: .5s ;
+			transition: .4s ;
 		}
 		.mouth img{
 			opacity: 1;
 			width: 100%;
 			transition: .5s ;
 			transform: rotateZ(0deg) scale(1) translateX(0px) translateY(0px);
-			transition: .5s ;
+			transition: .4s ;
 		}
 		.nose img{
 			opacity: 1;
 			width: 100%;
 			transition: .5s ;
 			transform: rotateZ(0deg) scale(1) translateX(0px) translateY(0px);
-			transition: .5s ;
+			transition: .4s ;
 		}
 		.nose2 img{
 			opacity: 1;
 			width: 100%;
 			transform: rotateZ(0deg) scale(1) translateX(0px) translateY(0px);
-			transition: .5s ;
+			transition: .4s ;
 		}
 		#left:hover ~ #lefteye>#lefteyeball{
 			top: 20px;
@@ -956,9 +1009,9 @@
 		
 		
 		#bottomleft:hover ~ #lefteye{
-			right:56%;
+			right:55.9%;
 			top: 248px;
-			transform: rotateZ(-5deg) scaleX(.68);
+			transform: rotateZ(-5deg) scaleX(.58);
 		}
 		#bottomleft:hover ~ #righteye{
 			left:52%;
@@ -979,9 +1032,9 @@
 			transform: rotateZ(0deg) scale(1) translateX(5px) translateY(15px);
 		}
 		#bottomleft:hover ~ #lefteyebrand>img{
-			right: 26.8%;
-			top:-45px;
-			transform: scaleX(.68)  rotateZ(0deg) scaleY(1.0);
+			right: 27.3%;
+			top:-53px;
+			transform: scaleX(.63)  rotateZ(-2deg) scaleY(1);
 		}
 		#bottomleft:hover ~ #righteyebrand>img{
 			right:24.5%;
@@ -999,7 +1052,27 @@
 			top: -45px;
 			right:23%;
 		}
+		#bottomleft:hover ~ #righteye>#righteyelight1{
+			top:22%;
+			right: 22%;
+			transform: rotateZ(-25deg) scaleX(1);
+		}
+		#bottomleft:hover ~ #righteye>#righteyelight2{
+			bottom:25%;
+			right: 50%;
+			transform: rotateZ(-25deg) scaleX(1);
+		}
+		#bottomleft:hover ~ #lefteye>#lefteyelight1{
+			top:22%;
+			right:7%;
+			transform: rotateZ(-25deg) scaleX(.95);
+		}
 		
+		#bottomleft:hover ~ #lefteye>#lefteyelight2{
+			bottom:28%;
+			right: 45%;
+			transform: rotateZ(-25deg) scaleX(.95);
+		}
 		
 		
 		
@@ -1036,7 +1109,7 @@
 		#bottomright:hover ~ #righteyebrand>img{
 			right: 16.8%;
 			top:-46px;
-			transform: scaleX(.67)  rotateZ(0deg) scaleY(1.015);
+			transform: scaleX(.69)  rotateZ(0deg) scaleY(1.015);
 		}
 		#bottomright:hover ~ #leftear>img{
 			transform: rotateZ(0deg) scaleX(1.1) scaleY(1.03);
@@ -1048,21 +1121,142 @@
 			right:22%;
 			transform: scaleY(1.03) scaleX(.9);
 		}
-		.box2{
+		#bottomright:hover ~ #righteye>#righteyelight1{
+			top:22%;
+			right:15%;
+			transform: rotateZ(-25deg) scaleX(.95);
+		}
+		
+		#bottomright:hover ~ #righteye>#righteyelight2{
+			bottom:25%;
+			right: 45%;
+			transform: rotateZ(-25deg) scaleX(.95);
+		}
+		#bottomright:hover ~ #lefteye>#lefteyelight1{
+			top:22%;
+			right: 5%;
+			transform: rotateZ(-25deg) scaleX(1);
+		}
+		#bottomright:hover ~ #lefteye>#lefteyelight2{
+			bottom:25%;
+			right: 40%;
+			transform: rotateZ(-25deg) scaleX(1);
+		}
+		.fenge{
 			width: 100%;
-			height: 300px
+			height: 250px;
+		}
+		.bg-box{
+			width: 100%;
+		}
+		.bgcontainer,.cover-frame,.cover,.content{ 
+			width: 100%;
+			height: 800px;
+			overflow: hidden
+}
+		.logo{
+			height: 50px;
+			margin-left: -50%
+		}
+		.navbar{
+				display: fixed;
+			z-index: 500
+			}
+		@media (max-width: 768px) {
+			
+			.cover-inner{
+				margin-top: 0%
+			}
+}
+		@media (max-width: 546px) {
+			
+			.cover-inner{
+				margin-top: 0%
+			}
+}
+		.footer{
+			padding: 50px;
+			margin-bottom: -100px
 		}
 	</style>
+	
 </head>
 
 	
 	
 	
-<body>
+<body class="pace-down">
+	
+	
+	<div class="pace pace-inactive"><div class="pace-progress" data-progress-text="100%" data-progress="99" style="transform: translate3d(100%, 0px, 0px);">
+  <div class="pace-progress-inner"></div>
+</div>
+<div class="pace-activity"></div></div>
+
+
+
+ <div class="bgcontainer">
+  <div id="app">
+    
+      
+    <main class="content anim">
+      
+<section class="cover">
+    
+    
+  <div class="cover-frame">
+	 
+		  <div class="bg-box">
+      <img src="../images/cover1.jpg" alt="image frame">
+    </div>
+	  </div>
+    
+    <div class="cover-inner text-center text-white">
+      <h1><a href="#" class="ponyspin">PonySpin</a></h1>
+      <div id="subtitle-box">
+        
+        <span id="subtitle"></span><span class="typed-cursor" aria-hidden="true"></span>
+        
+      </div>
+      <div>
+        
+      </div>
+    </div>
+	</section>
+	</main>
+  </div>
+</div>
+
+
+
+
+<script src="https://cdn.staticfile.org/typed.js/2.0.12/typed.min.js"></script>
+
+
+<!-- Subtitle -->
+
+<script>
+    try {
+      var typed = new Typed("#subtitle", {
+        strings: ['随动小马测试'],
+        startDelay: 0,
+        typeSpeed: 200,
+        loop: true,
+        backSpeed: 100,
+        showCursor: true
+      });
+    } catch (err) {
+      console.log(err)
+    }
+  </script>
+  
+
+
+	<div class="fenge"></div>
+	
 	<div class="box"></div>
 		<div id="head">
 		
-		<img src="image/caogao4.PNG" alt="">
 		
 		<div id="left"><i class="fa fa-arrow-left"></i></div>
 		<div id="right"><i class="fa fa-arrow-right"></i></div>
@@ -1112,16 +1306,107 @@
 			<div id="lefteyeball"></div>
 		</div>
 		
-		<div id="face">
+		<div id="face2">
 		</div>
-			
-		
-	
-			
+				
 	</div>
-	<div class="box2"></div>
+	<div class="fenge"></div>
+ <footer class="footer">
+  <div class="outer">
+    <ul>
+      <li class="span">
+        Copyrights ©
+        2023
+        <i class="ri-heart-fill heart_icon"></i> PM
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+        
+        <span class="span">
+  <span><i class="ri-user-3-fill"></i>访问人数:<span id="busuanzi_value_site_uv">103697</span></span>
+  <span class="division">|</span>
+  <span><i class="ri-eye-fill"></i>浏览次数:<span id="busuanzi_value_page_pv">364333</span></span>
+</span>
+        
+      </li>
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      <li>
+        <!-- cnzz统计 -->
+        
+        <script type="text/javascript" src="https://s9.cnzz.com/z_stat.php?id=1278069914&amp;web_id=1278069914"></script>
+        
+      </li>
+    </ul>
+  </div>
+</footer>    
+
+    <aside class="sidebar anim off">
+      <button class="navbar-toggle"></button>
+<nav class="navbar">
+ 
+  <div class="logo">
+    <a href="https://pm3818.github.io/"><img src="../images/ayer-side.svg" alt="3818号宇宙"></a>
+  </div>
 	
-	
-	
+  <ul class="nav nav-main">
+    
+    <li class="nav-item">
+      <a class="nav-item-link span2" href="https://pm3818.github.io/">主页</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-item-link span2" href="#">PonySpin</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-item-link span2" href="../SwitchUI1/ui1.html">SwitchUI</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-item-link span2" href="https://search.bilibili.com/all?keyword=UID220101611&from_source=webtop_search&spm_id_from=333.999&search_source=5">关于我</a>
+    </li>
+
+    
+  </ul>
+</nav>
+
+
+    </aside>
+
+<script src="../js/jquery-3.6.0.min.js"></script>
+ 
+<script src="../js/lazyload.min.js"></script>
+
+<!-- Tocbot -->
+
+<script src="https://cdn.staticfile.org/jquery-modal/0.9.2/jquery.modal.min.js"></script>
+<link rel="stylesheet" href="https://cdn.staticfile.org/jquery-modal/0.9.2/jquery.modal.min.css">
+<script src="https://cdn.staticfile.org/justifiedGallery/3.8.1/js/jquery.justifiedGallery.min.js"></script>
+<script src="../js/clickLove.js"></script>
+<script src="../js/lazyload.min.js"></script>
+<script src="../dist/main.js"></script>
+<script src="../js/clickBoom1.js"></script>
+	<svg xmlns="http://www.w3.org/2000/svg" class="goog-te-spinner" width="96px" height="96px" viewBox="0 0 66 66"><circle class="goog-te-spinner-path" fill="none" stroke-width="6" stroke-linecap="round" cx="33" cy="33" r="30"></circle></svg>
+	<link rel="stylesheet" href="https://cdn.staticfile.org/photoswipe/4.1.3/photoswipe.min.css">
+	<link rel="stylesheet" href="https://cdn.staticfile.org/photoswipe/4.1.3/default-skin/default-skin.min.css">
+<script src="https://cdn.staticfile.org/photoswipe/4.1.3/photoswipe.min.js"></script>
+
+          
 </body>
+	<volc-translate style="position: fixed; top: 0px; left: 0px; width: 0px; height: 0px; z-index: 9999;">
+	<link rel="stylesheet" href="chrome-extension://jmnhemdajboodicneejdlpanmijclhef/styles/content.css">
+	<main id="volc_translate"><div class="App__Wrapper-sc-t1bcp1-0 dscyhP"></div></main>
+	<style data-styled="active" data-styled-version="5.3.9"></style>
+	</volc-translate>
 </html>

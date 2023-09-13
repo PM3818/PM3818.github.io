@@ -1,0 +1,496 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="css/font-awesome.css">
+<link rel="stylesheet" href="../css/custom.styl">
+<link rel="stylesheet" href="../css/clipboard.styl">
+<link rel="stylesheet" href="../css/fonts/remixicon.css">
+<meta name="generator" content="hexo-theme-ayer">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<link rel="stylesheet" href="../dist/main2.css">
+<link rel="alternate" href="../atom.xml" title="岛" type="application/atom+xml">
+	
+<script type="text/javascript" charset="UTF-8" async="" src="https://sdk.51.la/js-sdk-pro.min.js" id="LA_COLLECT"></script>
+<script src="https://cdn.staticfile.org/pace/1.2.4/pace.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-bulma@5.0.1/bulma.min.css">
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.min.js"></script>
+<title>SwitchUI</title>
+	
+<style>
+        .swal2-styled.swal2-confirm {
+          font-size: 1.6rem;
+        }
+	.fenge{
+			width: 100%;
+			height: 250px;
+		background-color: #d2d9e8;
+		}
+		.bg-box{
+			width: 100%;
+		}
+		.bgcontainer,.cover-frame,.cover,.content{ 
+			width: 100%;
+			height: 800px;
+			overflow: hidden
+}
+		.logo{
+			height: 50px;
+			margin-left: -50%
+		}
+		.navbar{
+				display: fixed;
+			z-index: 500
+			}
+		@media (max-width: 768px) {
+			
+			.cover-inner{
+				margin-top: 0%
+			}
+}
+		@media (max-width: 546px) {
+			
+			.cover-inner{
+				margin-top: 0%
+			}
+}
+		.footer{
+			padding: 50px;
+			margin-bottom: -100px
+		}
+</style>
+<style type="text/css">
+		[mt_node=trans_loading]::after{
+		content: '';
+		vertical-align: middle !important;
+		width: 1em !important;
+		height: 1em !important;
+		display: inline-block !important;
+		margin: 0 4px !important;
+		border: 2px rgba(0, 0, 0, 0.25) solid !important;
+		border-top: 2px rgba(0, 0, 0, 1) solid !important;
+		border-radius: 50% !important;
+		padding: 0 !important;
+		-webkit-animation: immersive-translate-loading-animation 0.6s infinite linear !important;
+		animation: immersive-translate-loading-animation 0.6s infinite linear !important;
+		}
+
+		@keyframes immersive-translate-loading-animation {
+			from {
+				transform: rotate(0deg,0deg,0deg);
+			}
+			to {
+				transform: rotate(359deg,0deg,0deg);
+			}
+		}
+</style>
+<style type="text/css">[mt_node^=trans]{display: none !important;}</style>
+	
+	
+	
+	<style>
+		*{
+		margin: 0px;
+		padding: 0px;
+		}
+		body,html{
+			width: 100%;
+			height: 100%;
+			
+		}
+		.box{
+			background-color: #d2d9e8;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			width: 100%;
+			height: 100%;
+			transition: all 1s
+		}
+		.switch{
+			display: inline-block;
+			width: 545px;
+			height: 215px;
+			background:#367bb5;
+			border-radius:107px;
+			margin: auto;
+			box-shadow: 5px 5px 10px 0px rgba(268,268,268,1) ;
+			transition: 1s;
+			display: flex;
+			align-items: center;
+			position: relative;
+			overflow: hidden
+			
+		}
+		.shadow{
+			display: inline-block;
+			width: 545px;
+			height: 215px;
+			border-radius:107px;
+			margin: auto;
+			box-shadow: 20px 25px 50px -10px rgba(0,0,0,.4) inset;
+			transition: 1s;
+			display: flex;
+			position:absolute;
+			z-index: 10
+		}
+		.circle{
+			width: 180px;
+			height: 180px;
+			border-radius: 50%;
+			position: absolute;
+			left: 25px;
+			overflow: hidden;
+			transition: 1s;
+			z-index: 3;
+			box-shadow: 5px 5px 10px 0px rgba(0,0,0,.3);
+			
+		}
+		.switch:hover{
+			background:#1a212e;
+			box-shadow: 5px 5px 10px 0px rgba(268,268,268,.3) ;
+		}
+		.box:has(.switch:hover){
+			background-color:#0e1723;
+		}
+		.switch:hover .circle{
+			left: 345px;
+			box-shadow: -5px 5px 10px 0px rgba(0,0,0,.5);
+		}
+		.switch:hover .shadow{
+			box-shadow: 20px 25px 50px -10px rgba(0,0,0,.8) inset;
+		}
+		.cloud{
+			display: inline-block;
+			width:100%;
+			transition: .4s;
+			position:absolute;
+			bottom: -120px;
+			right: -50px;
+			z-index: 2
+		}
+		.switch:hover .cloud{
+			bottom: -300px;
+		}
+		.light1{
+			width:400px;
+			height:400px;
+			background:rgba(268,268,268,.1);
+			border-radius: 50%;
+			position: absolute;
+			left:-100px;
+			z-index: 1;
+			top: -90px;
+			transition: .5s;
+		}
+		.light2{
+			width:500px;
+			height:500px;
+			background:rgba(268,268,268,.1);
+			border-radius: 50%;
+			position: absolute;
+			left:-100px;
+			z-index: 1;
+			top: -140px;
+			transition: .5s;
+		}
+		.light3{
+			width:600px;
+			height:600px;
+			background:rgba(268,268,268,.1);
+			border-radius: 50%;
+			position: absolute;
+			left:-100px;
+			z-index: 1;
+			top: -190px;
+			transition: .5s;
+		}
+		.switch:hover .light1{
+			left:280px;
+		}
+		.switch:hover .light2{
+			left:210px;
+		}
+		.switch:hover .light3{
+			left:140px;
+		}
+			.cloud2{
+			display: inline-block;
+			width:100%;
+			transition: .5s;
+			position:absolute;
+			bottom: -90px;
+			right: -50px;
+				z-index: 1
+		}
+		.switch:hover .cloud2{
+			bottom: -300px;
+		}
+		.sun,.luna{
+			width: 180px;
+			height: 180px;
+		}
+		.sun img{
+			height: 102%;
+			position: absolute;
+			left: -73px;
+			top: -3px;
+		}
+		.luna img{
+			height: 102%;
+			position: absolute;
+			left: 133px;
+			top: -3px;
+			transition: .5s;
+		}
+		.switch:hover .lunapic{
+			left: -73px;
+		}
+		.star{
+			display: inline-block;
+			width:70%;
+			transition: .6s;
+			position:absolute;
+			bottom: 195px;
+			right: 170px;
+			z-index: 2
+		}
+		.switch:hover .star{
+			bottom: -6px;
+		}
+		.frame,.cover-frame,.bg-box img,.bg-box{
+			width:2000px;
+			margin: 0px
+		}
+		.bg-box{
+			width: 100%;
+		}
+		.bgcontainer,.cover-frame,.cover,.content{ 
+			width: 100%;
+			height: 800px;
+			overflow: hidden
+}
+		.logo{
+			height: 50px;
+			margin-left: 0%
+		}
+		.navbar{
+				display: fixed;
+			z-index: 500
+			}
+		@media (max-width: 768px) {
+			
+			.cover-inner{
+				margin-top: 0%
+			}
+}
+		@media (max-width: 546px) {
+			
+			.cover-inner{
+				margin-top: 0%
+			}
+}
+		.footer{
+			padding: 50px;
+			margin-bottom: -100px
+		}
+	</style>
+</head>
+
+<body>
+	
+	<div class="pace pace-inactive"><div class="pace-progress" data-progress-text="100%" data-progress="99" style="transform: translate3d(100%, 0px, 0px);">
+  <div class="pace-progress-inner"></div>
+</div>
+<div class="pace-activity"></div></div>
+
+
+
+ <div class="bgcontainer">
+  <div id="app">
+    
+      
+    <main class="content anim">
+      
+<section class="cover">
+    
+    
+  <div class="cover-frame">
+	 
+		  <div class="bg-box">
+      <img src="../images/cover1.jpg" alt="image frame" width="100%" class="frame">
+    </div>
+	  </div>
+    
+    <div class="cover-inner text-center text-white">
+      <h1><a href="#" class="ponyspin">SwitchUI</a></h1>
+      <div id="subtitle-box">
+        
+        <span id="subtitle"></span><span class="typed-cursor" aria-hidden="true"></span>
+        
+      </div>
+      <div>
+        
+      </div>
+    </div>
+	</section>
+	</main>
+  </div>
+</div>
+
+
+
+
+<script src="https://cdn.staticfile.org/typed.js/2.0.12/typed.min.js"></script>
+
+
+<!-- Subtitle -->
+
+<script>
+    try {
+      var typed = new Typed("#subtitle", {
+        strings: ['开关UI测试'],
+        startDelay: 0,
+        typeSpeed: 200,
+        loop: true,
+        backSpeed: 100,
+        showCursor: true
+      });
+    } catch (err) {
+      console.log(err)
+    }
+  </script>
+  
+
+
+	<div class="fenge"></div>
+	<div class="box">
+		<div class="switch">
+			<div class="shadow"></div>
+			<div class="circle">
+				<div class="sun">
+					<img src="image/sun.png" alt="" class="sunpic">
+				</div>
+				<div class="luna">
+				<img src="image/luna.png" alt="" class="lunapic">
+				</div>
+			</div>
+			<div class="light">
+				<div class="light1"></div>
+				<div class="light2"></div>
+				<div class="light3"></div>
+			</div>
+			<div class="cloud">
+				<img src="image/cloud.png" alt="" width="100%">
+			</div>
+			<div class="cloud2">
+				<img src="image/cloud2.png" alt="" width="100%">
+			</div>
+			<div class="star">
+				<img src="image/star.png" alt="" width="100%">
+			</div>
+		</div>
+	</div>
+		<div class="fenge"></div>
+	
+	<footer class="footer">
+  <div class="outer">
+    <ul>
+      <li class="span">
+        Copyrights ©
+        2023
+        <i class="ri-heart-fill heart_icon"></i> PM
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+        
+        <span class="span">
+  <span><i class="ri-user-3-fill"></i>访问人数:<span id="busuanzi_value_site_uv">103697</span></span>
+  <span class="division">|</span>
+  <span><i class="ri-eye-fill"></i>浏览次数:<span id="busuanzi_value_page_pv">364333</span></span>
+</span>
+        
+      </li>
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      <li>
+        <!-- cnzz统计 -->
+        
+        <script type="text/javascript" src="https://s9.cnzz.com/z_stat.php?id=1278069914&amp;web_id=1278069914"></script>
+        
+      </li>
+    </ul>
+  </div>
+</footer>    
+
+    <aside class="sidebar anim off">
+      <button class="navbar-toggle"><i class="fa fa-bars"></i></button>
+<nav class="navbar">
+ 
+  <div class="logo">
+    <a href="https://pm3818.github.io/"><img src="../images/ayer-side.svg" alt="3818号宇宙"></a>
+  </div>
+	
+  <ul class="nav nav-main">
+    
+    <li class="nav-item">
+      <a class="nav-item-link span2" href="https://pm3818.github.io/">主页</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-item-link span2" href="../PonyTurnAround/PonyTurnAround.html">PonySpin</a>
+    </li>
+	<li class="nav-item">
+      <a class="nav-item-link span2" href="#">SwitchUI</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link span2" href="https://search.bilibili.com/all?keyword=UID220101611&from_source=webtop_search&spm_id_from=333.999&search_source=5">关于我</a>
+    </li>
+
+    
+  </ul>
+</nav>
+
+
+    </aside>
+
+<script src="../js/jquery-3.6.0.min.js"></script>
+ 
+<script src="../js/lazyload.min.js"></script>
+
+<!-- Tocbot -->
+
+<script src="https://cdn.staticfile.org/jquery-modal/0.9.2/jquery.modal.min.js"></script>
+<link rel="stylesheet" href="https://cdn.staticfile.org/jquery-modal/0.9.2/jquery.modal.min.css">
+<script src="https://cdn.staticfile.org/justifiedGallery/3.8.1/js/jquery.justifiedGallery.min.js"></script>
+<script src="../js/clickLove.js"></script>
+<script src="../js/lazyload.min.js"></script>
+<script src="../dist/main.js"></script>
+<script src="../js/clickBoom1.js"></script>
+	<svg xmlns="http://www.w3.org/2000/svg" class="goog-te-spinner" width="96px" height="96px" viewBox="0 0 66 66"><circle class="goog-te-spinner-path" fill="none" stroke-width="6" stroke-linecap="round" cx="33" cy="33" r="30"></circle></svg>
+	<link rel="stylesheet" href="https://cdn.staticfile.org/photoswipe/4.1.3/photoswipe.min.css">
+	<link rel="stylesheet" href="https://cdn.staticfile.org/photoswipe/4.1.3/default-skin/default-skin.min.css">
+<script src="https://cdn.staticfile.org/photoswipe/4.1.3/photoswipe.min.js"></script>
+
+
+	
+</body>
+<volc-translate style="position: fixed; top: 0px; left: 0px; width: 0px; height: 0px; z-index: 9999;">
+	<link rel="stylesheet" href="chrome-extension://jmnhemdajboodicneejdlpanmijclhef/styles/content.css">
+	<main id="volc_translate"><div class="App__Wrapper-sc-t1bcp1-0 dscyhP"></div></main>
+	<style data-styled="active" data-styled-version="5.3.9"></style>
+	</volc-translate>
+</html>

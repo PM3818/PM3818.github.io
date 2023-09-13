@@ -681,7 +681,6 @@ button {
 
 .cover-frame .bg-box>img {
     display: block;
-    width: 1406px;
     height: 100vh;
     -o-object-fit: cover;
     object-fit: cover;
