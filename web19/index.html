@@ -1,0 +1,307 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Portfolio 展现你的才华</title>
+<!--css-->
+<link rel="stylesheet" href="css/css.css">
+	<!--字体图标-->
+<link rel="stylesheet" href="css/font-awesome.css">
+<!--网页图标-->
+<link rel="shortcut icon"  href="icon/logo.png">
+</head>
+
+<body>
+	<!--header-->
+<header>
+    <div class="headerlogo"><a href="#"><img src="images/logo.png" alt="logo"></a></div>
+    <nav>
+        <ul>
+            <li><a href="#">首页</a></li>
+            <li><a href="Price.html" target="_blank">定价</a></li>
+            <li><a href="" class="navactive">示例</a></li>    		
+            <li><a href="#" id="postLink" onclick="handlePost()">投稿</a></li>    		
+            <li><a href="contacts.html" target="_blank">联系我们</a></li>    		
+        </ul>
+    </nav>
+    <div class="moblie-nav-toggler"><i class="fa fa-bars"></i></div>
+</header>
+
+<div id="id01" class="modal">
+    <form class="modal-content animate" method="POST" action="login_handler.php">
+        <div class="imgcontainer">
+            <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+        </div>
+        <div class="container">
+            <label><b>Username</b></label>
+            <input type="text" placeholder="Enter Username" name="uname" required>
+            <label><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" name="psw" required>
+            <button type="submit">登录</button>
+            <input type="checkbox" checked="checked"> 记住我
+        </div>
+        <div class="container" style="background-color:#f1f1f1">
+            <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+        </div>
+    </form>
+</div>
+<!--banner-->
+<div class="banner">
+	
+  <div class="banner-decorate">
+	  <img src="images/phone.png" alt="" class="phone" id="phone">
+	  <img src="images/egg.png" alt="" class="egg" id="eggImage">
+	  <img src="images/cat.png" alt="" class="cat" id="cat">
+	  <img src="images/small-window.png" alt="" class="smallwindow" id="smallwindow">
+	  <img src="images/kadai.png" alt="" class="kadai" id="kadai">
+	  <img src="images/flower.png" alt="" class="flower" id="flower">
+	  <div  class="wicketall">
+	  <img src="images/wicket.png" alt="" class="wicket" id="wicket">
+		  <div class="pressall">
+			  <div class="buttonbox">
+				  <button id="button1"><div class="button1"></div></button>
+			  </div>
+			  <div class="buttonbox">
+				  <button id="button2"><div class="button2"></div></button>
+			  </div>
+			  <div class="buttonbox">
+				  <button id="button3"><div class="button3"></div></button>
+			  </div>
+
+		  </div>
+	  </div>
+   <img src="images/测试.png" alt="" class="ces"> 
+  </div>	
+	
+  <div class="slideshow-container">
+<img src="images/window.png" alt="" class="window" id="windowImage">
+
+    <div class="mySlides fadein fadeout">
+      <img src="images/banner1.png" style="width:100%" alt="" id="bannerImage1">
+    </div>
+    <div class="mySlides fadein fadeout">
+      <img src="images/banner2.png" style="width:100%" alt="" id="bannerImage2">
+    </div>
+    <div class="mySlides fadein fadeout">
+      <img src="images/banner3.png" style="width:100%" alt="" id="bannerImage3">
+    </div>
+	  <div class="sildesBG"></div>
+  </div>
+  <br>
+  <div style="text-align:center">
+    <span class="dot"></span> 
+    <span class="dot"></span> 
+    <span class="dot"></span> 
+  </div>
+</div>
+		<div class="textbox"> <img src="images/text.png" alt="" class="text" id="text"></div>
+		<div class="bg">
+			<div class="jihe1"></div>
+			<div class="jihe2"></div>
+		</div>
+
+<div class="sperate"></div>
+	
+<!--AboutMe-->
+	<div class="displaytitle"><span class="titleline2" id="aboutmetitleline"></span> <h1>&nbsp;看看我的专长</h1> </div>
+
+	<div class="AboutMe">
+		<h1 id="aboutmetitle"></h1>
+		<div class="aboutmebox">
+			<div class="aboutmesmallbox aboutme1"><img src="images/aboutme1.png" alt="" width="100%"  id="aboutmesmallboximg1"></div>
+			<div class="aboutmesmallbox aboutme2"><img src="images/cpp.png" alt="" width="100%" id="aboutmesmallboximg2"></div>
+			<div class="aboutmesmallbox aboutme3"><img src="images/csharp (2).png" alt="" width="100%" id="aboutmesmallboximg3"></div>
+			
+			<img src="images/HTML.png" alt="" class="HTML" id="aboutmeimg1">
+			<img src="images/c++.png" alt="" class="cpp" id="aboutmeimg2">
+			<img src="images/csharp.png" alt="" class="csharp" id="aboutmeimg3">
+
+		</div>
+		<div class="aboutmebuttonbox">
+			<button id="aboutmebutton1"></button>
+			<button id="aboutmebutton2"></button>
+			<button id="aboutmebutton3"></button>
+		</div>
+	</div>
+	
+<!--DISPLAY-->
+	<div class="displaytitle"><span class="titleline" id="titleline"></span> <h1>&nbsp;看看我的作品</h1> </div>
+	<div class="display">
+		<div class="displaytextbox">
+			<img src="images/text (2).png" alt="" height="100%">
+		</div>
+		
+		<div class="displayimgbox">
+			
+			<div class="displaysmallimgbox">
+				<div class="displaysmallsmallimgbox1" id="displaysmallsmallimgbox1">
+					<img src="images/img.png" alt="" height="100%" id="displayImg1">
+				</div>
+				
+				<div class="displaysmallsmallimgbox2" id="displaysmallsmallimgbox2">
+				<div class="displaymask mask2">
+					<h1 id="title1">城堡 模型</h1>
+					<a href="#" id="moreLink1" target="_blank">查看更多</a>
+				</div>
+					<img src="images/model2.png" alt=""  height="100%" id="displayImg2">
+				</div>			
+			</div>
+			
+			<div class="displaysmallimgbox">
+				<div class="displaymask mask1">
+					<h1 id="title2">蛛 模型</h1>
+					<a href="https://www.siva.edu.cn/channels/131.htm" id="moreLink2" target="_blank">查看更多</a>
+				</div>
+				<img src="images/model1.png" alt="" height="100%" id="displayImg4">
+			</div>
+			
+			<div class="displaysmallimgbox">
+				<div class="displaysmallsmallimgbox2" id="displaysmallsmallimgbox3">
+					<img src="images/text (3).png" alt="" width="75%" id="displayText">
+				</div>
+				
+				<div class="displaysmallsmallimgbox1" id="displaysmallsmallimgbox4">
+				<div class="displaymask mask3">
+					<h1 id="title3">人 模型</h1>
+					<a href="#" id="moreLink3" target="_blank">查看更多</a>
+				</div>
+
+					<img src="images/model3.png" alt="" height="100%" id="displayImg3">
+				</div>			
+
+			</div>
+		</div>
+		<div class="displaybuttonbox">
+			<button id="button4"><div class="displaybutton displaybutton1"></div></button>
+			<button id="button5"><div class="displaybutton displaybutton2"></div></button>
+			<button id="button6"><div class="displaybutton displaybutton3" id="displaybutton3"></div></button>
+			<button id="button7"><div class="displaybutton displaybutton4"></div></button>
+		</div>
+
+	</div>
+	
+<!--手风琴-->
+	<div class="accordionbox">
+		
+	<div class="accordiontitle"><span class="accordiontitleline"></span> <h1>&nbsp;我的简历</h1> </div>		
+		
+		<button class="accordion active">教育背景</button>
+			<div class="panel" style="max-height: 200px">
+  				<div class="panelbox">
+					<div class="panelboximg"></div>
+					<div class="panelboxtext">
+						
+						<h4><i class="fa fa-compass"></i>&nbsp;上海视觉艺术学院艺术与科技专业<span class="date">2023.9&nbsp;-&nbsp;2027.12</span></h4>
+						<a href="https://www.siva.edu.cn/" target="_blank"><i class="fa fa-search"></i>&nbsp;上海视觉艺术学院官网</a>
+						<p>专攻课程涵盖三维建模、二维角色设计、三维动画、二维动画等核心技能理论基础：系统学习了三维艺术的理论与技术，具备扎实的几何学与材质知识。能够创建高质量模型。在校获得 2024 NCDA市级二等奖、2024米兰设计周市级三等奖、2023-2024校内综合奖学金二等奖。在校期间接手多次外包项目，积累了实际项目中的建模经验，提升了在不同需求下的技术适应能力与交付效率。</p>
+						
+
+					</div>
+				</div>
+			</div>
+
+		<button class="accordion">实习经历</button>
+			<div class="panel">
+  				<div class="panelbox">
+					<div class="panelboxtext">
+						
+						<h4><i class="fa fa-compass"></i>&nbsp;XX公司</h4>
+						<a href="#" target="_blank"><i class="fa fa-search"></i>&nbsp;XX公司官网</a>
+						<p>暂无</p>
+						
+
+					</div>
+				</div>
+			</div>
+		
+		<button class="accordion">校园经历</button>
+			<div class="panel">
+  				<div class="panelbox">
+					<div class="panelboxtext">
+						
+						<h4><i class="fa fa-compass"></i>&nbsp;上海视觉艺术学院艺术与科技专业 <span class="date">2024.7</span></h4>
+						<a href="https://www.siva.edu.cn/" target="_blank"><i class="fa fa-search"></i>&nbsp;上海视觉艺术学院官网</a>
+						<p>
+							负责整个项目中其中一栋建筑建模，独立完成从结构到细节的所有环节。在项目实战中精通建筑结构建模技巧，确保模型在美观和技术要求上的平衡，技艺达到新的高度。在团队中展现出卓越的协作能力，突現高效工作流程，提高建模精度和效率。
+						</p>
+						
+
+					</div>
+				</div>
+			</div>
+		
+		<button class="accordion">专业技能</button>
+			<div class="panel">
+  				<div class="panelbox">
+					<div class="panelboxtext">
+
+						<p>负责整个项目中其中一栋建筑建模，独立完成从结构到细节的所有环节在项目实战中精通建筑结构制作技巧，在团队中表现出卓越的协作能力，实现高效工作流程，提高建模精度和效率。</p>
+						
+
+					</div>
+				</div>
+			</div>
+		
+		<button class="accordion">自我评价</button>
+			<div class="panel">
+  				<div class="panelbox">
+					<div class="panelboxtext">
+
+						<p>具备扎实的建模技术与丰富的项目经验，精通多种建模软件，能够独立完成复杂建筑和场愛的模型制作。注重细节与整体结构的平街，熱悉模型优化流程，确保模型在视觉效果和技术要求之间的最佳表现，拥有良好的团队协作与沟通能力，能够高效融入团队井推动项日顺利完成。持续关注技术与艺术的结合，不断提升个人的建模技巧与创作能力。</p>
+						
+
+					</div>
+				</div>
+			</div>
+		
+		
+	</div>	
+	
+    <div class="contact">
+        <div class="contactbox">
+            <h2>联系我吧</h2>
+            <div class="hr"></div>
+            <h4>你有什么问题吗 来联系我吧！</h4>
+				<form id="contactForm" action="#" method="POST">
+    				<input type="text" name="name" placeholder="姓名"><br>
+    				<input type="text" name="email" placeholder="邮箱"><br>
+    				<input type="text" name="message" placeholder="信息"><br>
+    				<button type="button" id="submitButton">提交</button>
+				</form>        
+		</div>		
+		<div class="top">
+			<a href="#"><i class="fa fa-arrow-up"></i></a>
+		</div>
+		<div class="comments">
+			<div class="commentsleft">
+				<img src="images/yinhao.png" alt="">
+				<p class="commentsp">
+					我熟悉C#、C++、HTML、CSS和JavaScript，能够独立开发各种项目。还对AE动画和3D动画制作有一定了解，能够通过动感的画面讲述故事。
+				</p>
+			</div>
+			<div class="commentsright">
+				<div class="commenttop">
+					<img src="images/yinhao.png" alt="">
+					<p class="commentsp">
+						我不仅精通编程，还拥有一定的绘画能力。通过画笔，我能够捕捉生活中的细节，并将其转化为独特的视觉作品。无论是数字创作还是传统绘画，我都在不断探索如何将技术与艺术结合。
+					</p>
+				</div>
+				<div class="commentbottom">
+					<img src="images/yinhao.png" alt="">
+					<p class="commentsp">
+							我的创作融合了编程、动画和艺术，常常从不同角度入手，带给观众新鲜感。我喜欢通过自己的技术背景与艺术视野，挑战更具创意的作品，打破传统的界限。
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+<!--footer-->
+	<footer>
+		<p>2023368019 谢佳祺 &copy; 2025</p>
+	</footer>
+	
+	
+	<!--JS-->
+	<script src="js/js.js"></script>
+</body>
+</html>
