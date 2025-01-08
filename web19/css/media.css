@@ -1,5 +1,17 @@
 @charset "utf-8";
 /* CSS Document */
+
+
+@media screen and (max-width: 300px) {
+    span.psw {
+       display: block;
+       float: none;
+    }
+    .cancelbtn {
+       width: 100%;
+    }
+}
+
 @media screen and (max-width: 768px) {
 	header{
 		padding:0px 30px;
@@ -25,21 +37,19 @@
 	margin: 20px 0px
 }
 
-
+.contactus{
+	width: 70%;
+	height:500px!important;
+	z-index: 10;
+	position: absolute;
+	top: 380px;
+	left: 15%;
+	display: flex;
+	justify-content:center;
+	align-items: flex-start;
+	background-color: white;
+	padding: 20px
 }
-
-@media screen and (max-width: 300px) {
-    span.psw {
-       display: block;
-       float: none;
-    }
-    .cancelbtn {
-       width: 100%;
-    }
-}
-
-@media screen and (max-width: 768px) {
-
 	  .banner {
    margin-top: 250px!important;
   }
@@ -98,9 +108,8 @@ margin-top: -340px!important; /* 负值让整体向上移动，调整数值以�
 	top: 30%!important;
 }
 	
-}
 
-@media screen and (max-width: 768px){
+
 	.sperate{
 	height: 50px!important;
 }
@@ -133,9 +142,16 @@ margin-top: -340px!important; /* 负值让整体向上移动，调整数值以�
 	.display{
 	height: 380px!important;
 	width: 80%!important;
+	margin-left: 10%;
+		margin-top: -80px
 
 }
-	.displaytextbox{
+	.displaytextbox img{
+display: none!important;
+		
+
+}
+		.displaytextbox img{
 display: none!important;
 		
 
@@ -163,11 +179,17 @@ display: none
 	width: 200%;
 
 	
+
+
+	}
+.contactus{
+	width: 90%;
+	left: 2.5%;
 }
 
 }
 
-@media screen and (max-width: 1024px){
+@media screen and (min-width: 769px) and (max-width: 1024px) {
 	.panelboxtext p{
 	margin-top: 20px;
 	font-size: 18px

@@ -50,29 +50,39 @@ function updateCalendar(month, year) {
 
     // 填充日期
     for (let date = 1; date <= lastDate; date++) {
+		//创建一个循环，从 1 开始，循环到 lastDate（当月的最后一天），代表当前月的每一天。
         const dateLi = document.createElement("li");
+		//动态创建一个 <li> 元素，用于表示一个日期。
         dateLi.textContent = date; // 设置日期内容。
+		//设置 <li> 的文本内容为当前日期 date。
 
         // 检查当前日期是否是不可用日期
         const isUnavailable = noAvailabilityDates.some(d => d.year === year && d.month === month && d.day === date);
-        if (isUnavailable) {
-            dateLi.classList.add("unavailable"); // 给不可用日期添加一个类
+		//使用 some() 方法检查 noAvailabilityDates 数组中是否存在一个对象，其 year、month 和 day 与当前日期相同。
+		//如果找到匹配的日期，isUnavailable 为 true，否则为 false。
+        if (isUnavailable) {//判断当前日期是否为不可用日期。
+            dateLi.classList.add("unavailable"); // 给不可用日期添加一个类 如果是不可用日期，为 <li> 添加一个 unavailable 类，用于样式控制。
         }
 
         // 高亮当前日期
         if (date === today.getDate() && month === today.getMonth() && year === today.getFullYear()) {
+			//判断当前日期是否是当天。
+			//today.getDate()、today.getMonth() 和 today.getFullYear() 分别获取今天的日、月、年。
             const span = document.createElement("span");
+			//创建一个 <span> 元素，用于高亮当天日期。
             span.classList.add("dailyactive");
+			//为 <span> 添加一个 dailyactive 类，用于设置高亮样式。
             span.textContent = date; // 设置高亮日期。
             dateLi.innerHTML = "";
-            dateLi.appendChild(span);
+			//清空 <li> 的内容，以便将高亮的 <span> 添加到 <li> 中。
+            dateLi.appendChild(span);//将 <span> 添加为 <li> 的子元素。
             // 设置当前日期的背景颜色
             dateLi.style.backgroundColor = "rgba(140, 96, 221, 0.60)";
         }
 
-        daysContainer.appendChild(dateLi);
+        daysContainer.appendChild(dateLi);//将当前日期的 <li> 元素添加到 daysContainer 容器中，完成渲染。
     }
-    // 将生成的 `<li>`（日期项）添加到日历容器中。
+
 }
 
 // 初始化日历
@@ -103,8 +113,6 @@ document.querySelector(".next").addEventListener("click", () => {
     }
     updateCalendar(currentMonth, currentYear);
 });
-console.log(document.getElementById("days")); // 应该输出 <ul>...</ul>
-console.log(document.getElementById("monthYear")); // 应该输出 <li>...</li>
 
 
 //表单2
