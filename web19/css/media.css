@@ -12,7 +12,22 @@
     }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (min-width: 301px) and (max-width: 768px) {
+	.contactbox2 h2{
+	font-size: 25px!important;
+	font-weight: normal;
+	
+}
+	.contactbox2 h4{
+	font-size: 15px!important;
+
+}
+	.contactbox2 form{
+	margin: -20px 0px 0px;
+	width: 50%;
+}
+
+
 	header{
 		padding:0px 30px;
 		font-size: 10px
@@ -142,16 +157,16 @@ margin-top: -340px!important; /* 负值让整体向上移动，调整数值以�
 	.display{
 	height: 380px!important;
 	width: 80%!important;
-	margin-left: 10%;
+	margin-left: 0%;
 		margin-top: -80px
 
 }
-	.displaytextbox img{
+.displaytextbox img{
 display: none!important;
 		
 
 }
-		.displaytextbox img{
+.displaytextbox img{
 display: none!important;
 		
 
@@ -166,25 +181,22 @@ button.accordion {
 
 }
 .panelboxtext p{
-	margin-top: 20px;
-	font-size: 15px
+	margin-top: 20px!important;
+	font-size: 15px!important
 }
 	.comments{
-	display: none
+	display: none!important
 }
 .top{
-display: none
+display: none!important
 }
 	.contact{
-	width: 200%;
-
-	
-
+	width: 200%!important;
 
 	}
 .contactus{
-	width: 90%;
-	left: 2.5%;
+	width: 90%!important;
+	left: 2.5%!important;
 }
 
 }
