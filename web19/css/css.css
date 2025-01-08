@@ -128,6 +128,22 @@ nav>ul>li>a{
 	display:none;
 	margin-top: -10px
 }
+@media screen and (max-width: 768px) {
+	header{
+		padding:0px 30px;
+		font-size: 10px
+	}	
+	.headerlogo{
+
+	margin-right: 20%;
+			width: 18%;
+
+}
+	  .banner {
+   margin-top: -100px
+  }
+
+}
 
 /*登陆表单*/
 /* Full-width input fields */
@@ -234,7 +250,6 @@ span.psw {
     to {transform: scale(1)}
 }
 
-/* Change styles for span and cancel button on extra small screens */
 @media screen and (max-width: 300px) {
     span.psw {
        display: block;
@@ -245,7 +260,70 @@ span.psw {
     }
 }
 /* 幻灯片容器 */
+
+
 /*banner*/
+@media screen and (max-width: 768px) {
+
+	  .banner {
+   margin-top: 250px !important;
+  }
+	.slideshow-container{
+		width: 70% !important
+	}
+	.window{
+		height: 80% !important;
+		width: 102% !important
+	}
+	.dot {
+  top: -80px!important
+}
+	.egg{
+	height: 45%!important;
+	top: 18%!important;
+	left: -12%!important;
+	
+}
+	.kadai{
+	height: 15%!important;
+	left: 2%!important;
+	top: 20%!important;
+
+}
+.wicketall{
+	width: 15%!important;
+	right: 55%!important;
+	top: 21%!important;
+	height: 10%!important
+}
+
+.flower{
+	height: 15%!important;
+	bottom: 30%!important;
+	left: -8%!important;
+}
+	.textbox {
+  height: 70px!important;
+margin-top: -340px!important; /* 负值让整体向上移动，调整数值以达到理想效果 */
+}
+.phone{
+	height: 53%!important;
+	top: 25%!important;
+	right: 50%!important;
+}
+	.smallwindow{
+	right: 65%!important;
+	height: 10%!important;
+	top: 23%!important;
+	
+}
+.cat{
+	right: 57%!important;
+	width: 7%!important;
+	top: 30%!important;
+}
+	
+}
 .banner {
   width: 100%;
   margin: 300px 0px;
@@ -674,6 +752,55 @@ width: 32%;
 	
 }
 /*display*/
+@media screen and (max-width: 768px){
+	.sperate{
+	height: 50px!important;
+}
+	.displaytitle{
+	margin: 50px 0px 150px 50px!important;
+}
+.aboutmebox{
+	width: 90%!important;
+	height: 200px!important;
+
+}
+	
+	.AboutMe{
+	margin-top: -50px!important;
+	margin-bottom: 0px!important;
+}
+	.aboutmesmallbox img{
+	margin-top: -20px!important;
+}
+	.aboutmebuttonbox button{
+	margin: 80px;
+	height: 70px!important;
+	width: 120px!important;
+	border-radius: 100%;
+	background-color: #6bbdff;
+	border: 10px #E0EEFF solid;
+	transition: all.5s
+}
+	.aboutmebuttonbox{
+	width: 90%!important;
+	height: 50px!important;
+	margin: 100px auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	z-index: 10
+	
+
+}
+	.display{
+	display: flex;
+	height: 700px;
+	width: 100%;
+	margin: 130px 0px;
+	z-index: 2
+}
+}
 .displaytitle{
 	margin: 150px 0px 150px 8%;
 	width: 100%;
