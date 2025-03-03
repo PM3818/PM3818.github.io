@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>学雷锋捡垃圾小游戏</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+            background-color: #87CEEB;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        #game {
+            position: relative;
+            width: 800px;
+            height: 600px;
+            background-color: #fff;
+            border: 2px solid #000;
+            overflow: hidden;
+        }
+        #lei-feng {
+            position: absolute;
+            bottom: 10px;
+            left: 375px;
+            width: 50px;
+            height: 50px;
+            background-image: url('img/lei-feng.png'); /* 雷锋图片 */
+            background-size: cover;
+        }
+        .trash {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            background-image: url('img/trash.png'); /* 垃圾图片 */
+            background-size: cover;
+        }
+        #score {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            font-size: 24px;
+            color: #000;
+        }
+        #missed {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 24px;
+            color: #000;
+        }
+        #game-over {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 48px;
+            color: red;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="game">
+        <div id="lei-feng"></div>
+        <div id="score">捡到垃圾: 0</div>
+        <div id="missed">漏掉垃圾: 0</div>
+        <div id="game-over">游戏结束！</div>
+    </div>
+
+    <script>
+        const game = document.getElementById('game');
+        const leiFeng = document.getElementById('lei-feng');
+        const scoreElement = document.getElementById('score');
+        const missedElement = document.getElementById('missed');
+        const gameOverElement = document.getElementById('game-over');
+        let score = 0;
+        let missed = 0;
+        let gameWidth = game.offsetWidth;
+        let gameHeight = game.offsetHeight;
+        let gameOver = false;
+
+        // 雷锋移动逻辑
+        document.addEventListener('mousemove', (e) => {
+            if (gameOver) return; // 游戏结束后禁止移动
+            const rect = game.getBoundingClientRect();
+            let x = e.clientX - rect.left - leiFeng.offsetWidth / 2;
+            x = Math.max(0, Math.min(x, gameWidth - leiFeng.offsetWidth));
+            leiFeng.style.left = `${x}px`;
+        });
+
+        // 生成垃圾
+        function createTrash() {
+            if (gameOver) return; // 游戏结束后不再生成垃圾
+            const trash = document.createElement('div');
+            trash.classList.add('trash');
+            trash.style.left = `${Math.random() * (gameWidth - 30)}px`;
+            trash.style.top = '0';
+            game.appendChild(trash);
+
+            // 垃圾下落逻辑
+            const fall = setInterval(() => {
+                if (gameOver) {
+                    clearInterval(fall);
+                    return;
+                }
+
+                const top = parseFloat(trash.style.top);
+                if (top >= gameHeight - 30) {
+                    clearInterval(fall);
+                    game.removeChild(trash);
+                    missed++;
+                    missedElement.textContent = `漏掉垃圾: ${missed}`;
+
+                    // 检查是否失败
+                    if (missed >= 5) {
+                        gameOver = true;
+                        gameOverElement.style.display = 'block';
+                    }
+                } else {
+                    trash.style.top = `${top + 2}px`;
+
+                    // 检测碰撞
+                    const leiFengRect = leiFeng.getBoundingClientRect();
+                    const trashRect = trash.getBoundingClientRect();
+                    if (
+                        trashRect.bottom >= leiFengRect.top &&
+                        trashRect.top <= leiFengRect.bottom &&
+                        trashRect.right >= leiFengRect.left &&
+                        trashRect.left <= leiFengRect.right
+                    ) {
+                        clearInterval(fall);
+                        game.removeChild(trash);
+                        score++;
+                        scoreElement.textContent = `捡到垃圾: ${score}`;
+                    }
+                }
+            }, 10);
+        }
+
+        // 每隔1秒生成一个垃圾
+        setInterval(createTrash, 1000);
+    </script>
+</body>
+</html>
